@@ -13,3 +13,5 @@ Imports:
     clipr,
     rstudioapi
 RoxygenNote: 7.2.1
+URL: https://github.com/kleinlennart/cput
+BugReports: https://github.com/kleinlennart/cput/issues
