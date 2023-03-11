@@ -1,0 +1,15 @@
+Package: cput
+Type: Package
+Title: RStudio Addin to Paste Clipboard as dput
+Version: 0.1.0
+Authors@R: 
+    person("Lennart", "Klein", , "first.last@example.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Copy some data and paste it immediately as an object generator function. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    clipr,
+    rstudioapi
+RoxygenNote: 7.2.1
