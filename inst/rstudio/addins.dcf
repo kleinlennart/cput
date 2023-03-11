@@ -2,3 +2,8 @@ Name: Paste as Vector
 Description: Insert Clipboard Content as Vector
 Binding: pasteAsVector
 Interactive: false
+
+Name: Paste as Recode
+Description: Insert Clipboard Content as Factor Recoder
+Binding: pasteAsRecode
+Interactive: false
