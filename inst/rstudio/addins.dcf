@@ -1,9 +1,17 @@
-Name: Paste as Vector
-Description: Insert Clipboard Content as Vector
+Name: Paste as recode
+Description: Insert Clipboard Content as recode
+Binding: pasteAsRecode
+Interactive: false
+
+Name: Paste as fct_recode
+Description: Insert Clipboard Content as fct_recode
+Binding: pasteAsFctRecode
+Interactive: false
+
+Name: Paste as vector
+Description: Insert Clipboard Content as a Vector
 Binding: pasteAsVector
 Interactive: false
 
-Name: Paste as Recode
-Description: Insert Clipboard Content as Factor Recoder
-Binding: pasteAsRecode
-Interactive: false
+
+
