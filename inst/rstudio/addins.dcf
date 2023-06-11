@@ -13,5 +13,7 @@ Description: Insert Clipboard Content as a Vector
 Binding: pasteAsVector
 Interactive: false
 
-
-
+Name: Translate here
+Description: Translate selected path to here::here path
+Binding: translateHere
+Interactive: false

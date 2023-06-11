@@ -11,8 +11,10 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     clipr,
+    magrittr,
     rstudioapi,
-    stringr
+    stringr,
+    usethis
 RoxygenNote: 7.2.1
 URL: https://github.com/kleinlennart/cput
 BugReports: https://github.com/kleinlennart/cput/issues
