@@ -13,6 +13,8 @@ translateHere <- function() {
     usethis::ui_stop("Selection included more than just the path.")
   }
 
+
+  # FIXME: change to {cli}
   usethis::ui_info(path)
   here <- stringr::str_split(path, "/") %>%
     unlist() %>%

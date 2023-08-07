@@ -22,3 +22,22 @@ pasteAsFctRecode <- function() {
   recoder <- paste0("fct_recode(\n  ", paste0(glue, collapse = ",\n  "), "\n)")
   rstudioapi::insertText(recoder)
 }
+
+
+#' Get Recoder from Vector
+#'
+#'
+#' @export
+use_recoder <- function(vec) {
+  lev <- unique(vec)
+  glue <- stringr::str_glue('"" = "{lev}"')
+  recoder <- paste0("fct_recode(\n  ", paste0(glue, collapse = ",\n  "), "\n)")
+  cli::cli_code(recoder)
+  # cli::rule()
+  cli::cli_h1("")
+
+  if (usethis::ui_yeah(x = "Copy code to clipboard?", no = "No thanks", yes = "Yes", shuffle = FALSE)) {
+     clipr::write_clip(recoder)
+    usethis::ui_done("Copied!")
+  }
+}
