@@ -4,7 +4,10 @@
 \alias{use_recoder}
 \title{Get Recoder from Vector}
 \usage{
-use_recoder(vec)
+use_recoder(vec, same = TRUE)
+}
+\arguments{
+\item{same}{Should the same factor labels be prepopulated? (defaults to TRUE)}
 }
 \description{
 Get Recoder from Vector

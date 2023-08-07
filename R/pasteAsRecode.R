@@ -26,18 +26,24 @@ pasteAsFctRecode <- function() {
 
 #' Get Recoder from Vector
 #'
+#' @param same Should the same factor labels be prepopulated? (defaults to TRUE)
 #'
 #' @export
-use_recoder <- function(vec) {
+use_recoder <- function(vec, same = TRUE) {
   lev <- unique(vec)
-  glue <- stringr::str_glue('"" = "{lev}"')
+
+  if (same) {
+    glue <- stringr::str_glue('"{lev}" = "{lev}"')
+  } else {
+    glue <- stringr::str_glue('"" = "{lev}"')
+  }
+
   recoder <- paste0("fct_recode(\n  ", paste0(glue, collapse = ",\n  "), "\n)")
   cli::cli_code(recoder)
-  # cli::rule()
   cli::cli_h1("")
 
   if (usethis::ui_yeah(x = "Copy code to clipboard?", no = "No thanks", yes = "Yes", shuffle = FALSE)) {
-     clipr::write_clip(recoder)
+    clipr::write_clip(recoder)
     usethis::ui_done("Copied!")
   }
 }
