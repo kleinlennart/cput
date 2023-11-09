@@ -61,7 +61,7 @@ use_recoder <- function(vec, same = TRUE) {
 #' @param numbers Should levels be machted to numbers? (defaults to TRUE)
 #'
 #' @export
-use_matcher <- function(vec, numbers = TRUE) {
+use_rematcher <- function(vec, numbers = TRUE) {
   if (is.factor(vec)) {
     lev <- levels(vec)
   } else {
