@@ -19,7 +19,7 @@ translateHere <- function() {
   here <- stringr::str_split(path, "/") %>%
     unlist() %>%
     paste(collapse = '", "') %>%
-    paste0('here::here(', ., ')')
+    paste0('here::here(', ., ')') # FIXME .
 
   rstudioapi::insertText(here)
   usethis::ui_done("Inserted!")

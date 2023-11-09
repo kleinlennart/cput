@@ -7,6 +7,8 @@
 use_recoder(vec, same = TRUE)
 }
 \arguments{
+\item{vec}{Input vector}
+
 \item{same}{Should the same factor labels be prepopulated? (defaults to TRUE)}
 }
 \description{
