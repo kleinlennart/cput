@@ -13,6 +13,7 @@ Imports:
     cli,
     clipr,
     magrittr,
+    rlang,
     rstudioapi,
     stringr,
     usethis

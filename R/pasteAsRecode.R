@@ -26,11 +26,43 @@ pasteAsFctRecode <- function() {
 
 #' Get Recoder from Vector
 #'
-#' @param vec Input vector
-#' @param same Should the same factor labels be prepopulated? (defaults to TRUE)
+# #' @param vec Input vector
+# #' @param same Should the same factor labels be prepopulated? (defaults to TRUE)
 #'
+# #' @export
+# use_recoder <- function(vec, same = TRUE) {
+#   # UseMethod("use_recoder")
+# }
+
+# use_recoder.factor <- function(vec, same = TRUE) {
+#   if (is.factor(vec)) {
+#     lev <- levels(vec)
+#   } else {
+#     lev <- unique(vec)
+#   }
+#
+#   if (same) {
+#     glue <- stringr::str_glue('"{lev}" = "{lev}"')
+#   } else {
+#     glue <- stringr::str_glue('"" = "{lev}"')
+#   }
+#
+#   recoder <- paste0("fct_recode(\n  ", paste0(glue, collapse = ",\n  "), "\n)")
+#   cli::cli_code(recoder)
+#   cli::cli_h1("")
+#
+#   if (usethis::ui_yeah(x = "Copy code to clipboard?", no = "No thanks", yes = "Yes", shuffle = FALSE)) {
+#     clipr::write_clip(recoder)
+#     usethis::ui_done("Copied!")
+#   }
+# }
+
+
 #' @export
-use_recoder <- function(vec, same = TRUE) {
+use_recoder <- function(.data, var, same = TRUE, ...) {
+  # vec <- .data[[var]]
+  vec <- .data |> dplyr::pull({{ var }})
+
   if (is.factor(vec)) {
     lev <- levels(vec)
   } else {
@@ -43,7 +75,7 @@ use_recoder <- function(vec, same = TRUE) {
     glue <- stringr::str_glue('"" = "{lev}"')
   }
 
-  recoder <- paste0("fct_recode(\n  ", paste0(glue, collapse = ",\n  "), "\n)")
+  recoder <- paste0(rlang::quo_name(rlang::enquo(var)), " |> fct_recode(\n  ", paste0(glue, collapse = ",\n  "), "\n)")
   cli::cli_code(recoder)
   cli::cli_h1("")
 
