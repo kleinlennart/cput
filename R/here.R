@@ -16,11 +16,11 @@ translateHere <- function() {
 
   # FIXME: change to {cli}
   usethis::ui_info(path)
-  here <- stringr::str_split(path, "/") %>%
-    unlist() %>%
-    paste(collapse = '", "') %>%
-    paste0('here::here(', ., ')') # FIXME .
+  path <- stringr::str_split(path, "/") |>
+    unlist() |>
+    paste(collapse = '", "')
+  here <- stringr::str_glue('here::here(', path, ')')
 
   rstudioapi::insertText(here)
-  usethis::ui_done("Inserted!")
+  cli::cli_alert_success("Inserted!")
 }

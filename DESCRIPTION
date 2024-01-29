@@ -12,6 +12,7 @@ LazyData: true
 Imports: 
     cli,
     clipr,
+    dplyr,
     magrittr,
     rlang,
     rstudioapi,
